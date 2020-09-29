@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,i,j;
+    char ch;
+    cin>>n;
+    for(i=1;i <= n ; i ++)
+    {
+        ch = 'a'+ i - 1;//字符要用单引号
+        for(j=1;j <i ;j++)
+        {
+            cout<<" ";
+        }
+        for(j=1; j<=n ; j++)
+        {
+            cout<< (char)(ch);
+            ch++;
+            if(ch > 'z')
+            {
+                ch ='a';
+            }
+        }
+        cout<<endl;
+    }
+}
