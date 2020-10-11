@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,i,x,a[110];
+    cin>>n;
+    for(i=0; i<=n-1; i++)
+    {
+        cin>>a[i];
+    }
+    cin>>x;
+    int r=n-1,l=0,m,f=n;
+    while(l<=r)
+    {
+        m=(r+l)/2;
+        if(a[m]==x)
+        {
+            f=m;
+            break;
+        }
+        if(a[m]>x)
+        {
+            r=m-1;
+        }else
+        {
+            l=m+1;
+        }
+    }
+    if(f!=n)
+    {
+        cout<<f+1<<endl;
+    }else
+    {
+        cout<<0<<endl;
+    }
+    return 0;
+}
