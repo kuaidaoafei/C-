@@ -12,7 +12,7 @@ int main()
     }
     cin>>x;
     int r=n-1,l=0,m,f=n;
-    while(l<=r)
+    while(l<=r)//一定要用<=
     {
         m=(r+l)/2;
         if(a[m]==x)
