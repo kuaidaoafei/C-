@@ -1,0 +1,44 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,i=1,j,k,len1,len2;
+    char c[1005];
+    cin>>n;
+    cin>>c;
+    while(c[i]!='.')
+    {
+        i++;
+    }
+    j=i;
+    while(c[i]!='(')
+    {
+        i++;
+    }
+    k=i;
+    len1=k-j-1;
+    while(c[i]!=')')
+    {
+        i++;
+    }
+    len2=i-k-1;
+    if(n<=len1)
+    {
+        cout<<c[j+n]<<endl;
+    }else
+    {
+        if((n-len1)%len2==0&&(n-len1)/len2>0)
+        {
+            n=len2;
+        cout<<c[k+n]<<endl;
+        }else
+        {
+            n=(n-len1)%len2;
+            cout<<c[k+n]<<endl;
+
+        }
+    }
+    return 0;
+}
