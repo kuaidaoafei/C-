@@ -1,0 +1,21 @@
+#include <iostream>
+#include <cstdio>
+using namespace std;
+
+int main()
+{
+    double a,b,s;
+    while(cin>>a>>b)
+    {
+        s=s+a*b;
+    }
+    if(s*10-int(s*10)>=0.5)
+    {
+        s=int(s*10)/10.0+0.1;//每次运算都是按照运算符运算，如果左右皆为整数，结果也为整数，因此此处要除以10.0
+    }else
+    {
+        s=int(s*10)/10.0;
+    }
+    printf("%.1f",s);
+    return 0;
+}
