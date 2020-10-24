@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,m,i,t;
+    cin>>n>>m;
+    int b[100000]={0};//数组有两重性质，i和a【i】各代表数
+    for(i=0;i<m;i++)
+    {
+        cin>>t;
+        b[t-1]=1;
+    }
+    for(i=0;i<n;i++)
+    {
+        if(b[i]==0)
+        {
+            cout<<i+1<<endl;
+        }
+    }
+    return 0;
+}
