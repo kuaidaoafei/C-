@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int m,n;
+    cin>>m>>n;
+    int a[m+5]={0},i,j=0,cnt=0;//数组没有赋值时会随机赋值，正负均有可能
+    for(i=1; j<m; i++)//j为出圈的人数
+    {
+        if(a[i]==-1)
+        {
+            if(i==m)//轮圈
+            {
+                i=0;
+            }
+            continue;
+        }else
+        {
+            cnt++;//cnt为报的数
+        }
+        if(cnt==n)//报到n时出圈
+        {
+            cout<<i<<endl;
+            a[i]=-1;
+            cnt=0;
+            j++;
+        }
+        if(i==m)//轮圈
+        {
+            i=0;
+        }
+    }
+    return 0;
+}
