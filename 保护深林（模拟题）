@@ -1,0 +1,91 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,y,m,d,w,i,cnt=0;
+    cin>>y>>m>>d>>w>>n;
+    for(i=1; i<=n; i++)
+    {
+        switch(m)
+        {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+            if(d==31)
+            {
+                d=1;
+                m++;
+            }
+            else
+            {
+                d++;
+            }
+            break;
+        case 12:
+            if(d==31)
+            {
+                d=1;
+                m=1;
+                y++;
+            }
+            else
+            {
+                d++;
+            }
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            if(d==30)
+            {
+                d=1;
+                m++;
+            }
+            else
+            {
+                d++;
+            }
+            break;
+        case 2:
+            if(((y%4==0)&&(y%100!=0))||(y%400==0))
+            {
+                if(d==29)
+                {
+                    d=1;
+                    m++;
+                }
+                else
+                {
+                    d++;
+                }
+            }
+            else
+            {
+                if(d==28)
+                {
+                    d=1;
+                    m++;
+                }
+                else
+                {
+                    d++;
+                }
+            }
+        }
+    }
+    if((w+n)%7==0)
+    {
+        w=7;
+    }else
+    {
+        w=(w+n)%7;
+    }
+    cout<<y<<' '<<m<<' '<<d<<' '<<w<<endl;
+    return 0;
+}
